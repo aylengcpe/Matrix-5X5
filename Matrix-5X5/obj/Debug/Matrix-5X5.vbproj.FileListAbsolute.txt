@@ -1,0 +1,11 @@
+c:\users\careshiela\documents\visual studio 2015\Projects\Matrix-5X5\Matrix-5X5\bin\Debug\Matrix-5X5.exe.config
+c:\users\careshiela\documents\visual studio 2015\Projects\Matrix-5X5\Matrix-5X5\bin\Debug\Matrix-5X5.exe
+c:\users\careshiela\documents\visual studio 2015\Projects\Matrix-5X5\Matrix-5X5\bin\Debug\Matrix-5X5.pdb
+c:\users\careshiela\documents\visual studio 2015\Projects\Matrix-5X5\Matrix-5X5\bin\Debug\Matrix-5X5.xml
+c:\users\careshiela\documents\visual studio 2015\Projects\Matrix-5X5\Matrix-5X5\obj\Debug\Matrix-5X5.vbprojResolveAssemblyReference.cache
+c:\users\careshiela\documents\visual studio 2015\Projects\Matrix-5X5\Matrix-5X5\obj\Debug\Matrix_5X5.Form1.resources
+c:\users\careshiela\documents\visual studio 2015\Projects\Matrix-5X5\Matrix-5X5\obj\Debug\Matrix_5X5.Resources.resources
+c:\users\careshiela\documents\visual studio 2015\Projects\Matrix-5X5\Matrix-5X5\obj\Debug\Matrix-5X5.vbproj.GenerateResource.Cache
+c:\users\careshiela\documents\visual studio 2015\Projects\Matrix-5X5\Matrix-5X5\obj\Debug\Matrix-5X5.exe
+c:\users\careshiela\documents\visual studio 2015\Projects\Matrix-5X5\Matrix-5X5\obj\Debug\Matrix-5X5.xml
+c:\users\careshiela\documents\visual studio 2015\Projects\Matrix-5X5\Matrix-5X5\obj\Debug\Matrix-5X5.pdb
