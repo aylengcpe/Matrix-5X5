@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -48,6 +49,8 @@ Partial Class Form1
         Me.Button23 = New System.Windows.Forms.Button()
         Me.Button24 = New System.Windows.Forms.Button()
         Me.Button25 = New System.Windows.Forms.Button()
+        Me.Timer = New System.Windows.Forms.Timer(Me.components)
+        Me.Monitor = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Button1
@@ -300,12 +303,29 @@ Partial Class Form1
         Me.Button25.TabIndex = 24
         Me.Button25.UseVisualStyleBackColor = False
         '
+        'Timer
+        '
+        Me.Timer.Enabled = True
+        Me.Timer.Interval = 1000
+        '
+        'Monitor
+        '
+        Me.Monitor.AutoSize = True
+        Me.Monitor.BackColor = System.Drawing.Color.Transparent
+        Me.Monitor.ForeColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(59, Byte), Integer), CType(CType(101, Byte), Integer))
+        Me.Monitor.Location = New System.Drawing.Point(0, 0)
+        Me.Monitor.Name = "Monitor"
+        Me.Monitor.Size = New System.Drawing.Size(13, 13)
+        Me.Monitor.TabIndex = 25
+        Me.Monitor.Text = "0"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(423, 341)
+        Me.Controls.Add(Me.Monitor)
         Me.Controls.Add(Me.Button25)
         Me.Controls.Add(Me.Button24)
         Me.Controls.Add(Me.Button23)
@@ -336,6 +356,7 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.Text = "MATRIX"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -364,4 +385,6 @@ Partial Class Form1
     Friend WithEvents Button23 As Button
     Friend WithEvents Button24 As Button
     Friend WithEvents Button25 As Button
+    Friend WithEvents Timer As Timer
+    Friend WithEvents Monitor As Label
 End Class
