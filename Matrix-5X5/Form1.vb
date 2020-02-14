@@ -1,589 +1,151 @@
 ﻿Public Class Form1
-    Private Sub Timer_Tick(sender As Object, e As EventArgs) Handles Timer.Tick
-        If monitor.Text <= 17 Then
-            monitor.Text = monitor.Text + 1
 
-        ElseIf monitor.Text > 17 Then
-            Monitor.Text = Monitor.Text - 17
+    Dim inputs(,) As Boolean = {
+        {False, False, False, False},
+        {False, False, False, True},
+        {False, False, True, False},
+        {False, False, True, True},
+        {False, True, False, False},
+        {False, True, False, True},
+        {False, True, True, False},
+        {False, True, True, True},
+        {True, False, False, False},
+        {True, False, False, True}
+    }
+    Dim second As Int32 = -1
 
-        End If
+    Dim A As Boolean
+    Dim B As Boolean
+    Dim C As Boolean
+    Dim D As Boolean
 
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Timer.Start()
     End Sub
 
-    Private Sub Monitor_TextChanged(sender As Object, e As EventArgs) Handles Monitor.TextChanged
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer.Tick
+        second += 1
 
-        '0'
-        If Monitor.Text = 0 Then
+        A = inputs(second, 0)
+        B = inputs(second, 1)
+        C = inputs(second, 2)
+        D = inputs(second, 3)
 
-            Button1.BackColor = Color.Black
-            Button2.BackColor = Color.Black
-            Button3.BackColor = Color.Black
-            Button4.BackColor = Color.Black
-            Button5.BackColor = Color.Black
-            Button6.BackColor = Color.Black
-            Button7.BackColor = Color.Transparent
-            Button8.BackColor = Color.Transparent
-            Button9.BackColor = Color.Transparent
-            Button10.BackColor = Color.Black
-            Button11.BackColor = Color.Black
-            Button12.BackColor = Color.Transparent
-            Button13.BackColor = Color.Transparent
-            Button14.BackColor = Color.Transparent
-            Button15.BackColor = Color.Black
-            Button16.BackColor = Color.Black
-            Button17.BackColor = Color.Transparent
-            Button18.BackColor = Color.Transparent
-            Button19.BackColor = Color.Transparent
-            Button20.BackColor = Color.Black
-            Button21.BackColor = Color.Black
-            Button22.BackColor = Color.Black
-            Button23.BackColor = Color.Black
-            Button24.BackColor = Color.Black
-            Button25.BackColor = Color.Black
+        Button1.BackColor = Color.Red
+        Button7.BackColor = Color.White
+        Button17.BackColor = Color.White
 
-            '1'
-
-        ElseIf monitor.Text = 1 Then
-
-            Button1.BackColor = Color.Transparent
-            Button2.BackColor = Color.Transparent
-            Button3.BackColor = Color.Black
-            Button4.BackColor = Color.Transparent
-            Button5.BackColor = Color.Transparent
-            Button6.BackColor = Color.Transparent
-            Button7.BackColor = Color.Transparent
-            Button8.BackColor = Color.Black
-            Button9.BackColor = Color.Transparent
-            Button10.BackColor = Color.Transparent
-            Button11.BackColor = Color.Transparent
-            Button12.BackColor = Color.Transparent
-            Button13.BackColor = Color.Black
-            Button14.BackColor = Color.Transparent
-            Button15.BackColor = Color.Transparent
-            Button16.BackColor = Color.Transparent
-            Button17.BackColor = Color.Transparent
-            Button18.BackColor = Color.Black
-            Button19.BackColor = Color.Transparent
-            Button20.BackColor = Color.Transparent
-            Button21.BackColor = Color.Transparent
-            Button22.BackColor = Color.Transparent
-            Button23.BackColor = Color.Black
-            Button24.BackColor = Color.Transparent
-            Button25.BackColor = Color.Transparent
-
-            '2'
-
-        ElseIf Monitor.Text = 2 Then
-
-            Button1.BackColor = Color.Black
-            Button2.BackColor = Color.Black
-            Button3.BackColor = Color.Black
-            Button4.BackColor = Color.Black
-            Button5.BackColor = Color.Black
-            Button6.BackColor = Color.Transparent
-            Button7.BackColor = Color.Transparent
-            Button8.BackColor = Color.Transparent
-            Button9.BackColor = Color.Transparent
-            Button10.BackColor = Color.Black
-            Button11.BackColor = Color.Black
-            Button12.BackColor = Color.Black
-            Button13.BackColor = Color.Black
-            Button14.BackColor = Color.Black
-            Button15.BackColor = Color.Black
-            Button16.BackColor = Color.Black
-            Button17.BackColor = Color.Transparent
-            Button18.BackColor = Color.Transparent
-            Button19.BackColor = Color.Transparent
-            Button20.BackColor = Color.Transparent
-            Button21.BackColor = Color.Black
-            Button22.BackColor = Color.Black
-            Button23.BackColor = Color.Black
-            Button24.BackColor = Color.Black
-            Button25.BackColor = Color.Black
-
-            '3'
-
-        ElseIf Monitor.Text = 3 Then
-
-            Button1.BackColor = Color.Black
-            Button2.BackColor = Color.Black
-            Button3.BackColor = Color.Black
-            Button4.BackColor = Color.Black
-            Button5.BackColor = Color.Black
-            Button6.BackColor = Color.Transparent
-            Button7.BackColor = Color.Transparent
-            Button8.BackColor = Color.Transparent
-            Button9.BackColor = Color.Transparent
-            Button10.BackColor = Color.Black
-            Button11.BackColor = Color.Black
-            Button12.BackColor = Color.Black
-            Button13.BackColor = Color.Black
-            Button14.BackColor = Color.Black
-            Button15.BackColor = Color.Black
-            Button16.BackColor = Color.Transparent
-            Button17.BackColor = Color.Transparent
-            Button18.BackColor = Color.Transparent
-            Button19.BackColor = Color.Transparent
-            Button20.BackColor = Color.Black
-            Button21.BackColor = Color.Black
-            Button22.BackColor = Color.Black
-            Button23.BackColor = Color.Black
-            Button24.BackColor = Color.Black
-            Button25.BackColor = Color.Black
-
-            '4'
-
-        ElseIf Monitor.Text = 4 Then
-
-            Button1.BackColor = Color.Black
-            Button2.BackColor = Color.Transparent
-            Button3.BackColor = Color.Transparent
-            Button4.BackColor = Color.Transparent
-            Button5.BackColor = Color.Black
-            Button6.BackColor = Color.Black
-            Button7.BackColor = Color.Transparent
-            Button8.BackColor = Color.Transparent
-            Button9.BackColor = Color.Transparent
-            Button10.BackColor = Color.Black
-            Button11.BackColor = Color.Black
-            Button12.BackColor = Color.Black
-            Button13.BackColor = Color.Black
-            Button14.BackColor = Color.Black
-            Button15.BackColor = Color.Black
-            Button16.BackColor = Color.Transparent
-            Button17.BackColor = Color.Transparent
-            Button18.BackColor = Color.Transparent
-            Button19.BackColor = Color.Transparent
-            Button20.BackColor = Color.Black
-            Button21.BackColor = Color.Transparent
-            Button22.BackColor = Color.Transparent
-            Button23.BackColor = Color.Transparent
-            Button24.BackColor = Color.Transparent
-            Button25.BackColor = Color.Black
-
-            '5'
-
-        ElseIf Monitor.Text = 5 Then
-
-            Button1.BackColor = Color.Black
-            Button2.BackColor = Color.Black
-            Button3.BackColor = Color.Black
-            Button4.BackColor = Color.Black
-            Button5.BackColor = Color.Black
-            Button6.BackColor = Color.Black
-            Button7.BackColor = Color.Transparent
-            Button8.BackColor = Color.Transparent
-            Button9.BackColor = Color.Transparent
-            Button10.BackColor = Color.Transparent
-            Button11.BackColor = Color.Black
-            Button12.BackColor = Color.Black
-            Button13.BackColor = Color.Black
-            Button14.BackColor = Color.Black
-            Button15.BackColor = Color.Black
-            Button16.BackColor = Color.Transparent
-            Button17.BackColor = Color.Transparent
-            Button18.BackColor = Color.Transparent
-            Button19.BackColor = Color.Transparent
-            Button20.BackColor = Color.Black
-            Button21.BackColor = Color.Black
-            Button22.BackColor = Color.Black
-            Button23.BackColor = Color.Black
-            Button24.BackColor = Color.Black
-            Button25.BackColor = Color.Black
-
-            '6'
-
-        ElseIf Monitor.Text = 6 Then
-
-            Button1.BackColor = Color.Black
-            Button2.BackColor = Color.Black
-            Button3.BackColor = Color.Black
-            Button4.BackColor = Color.Black
-            Button5.BackColor = Color.Black
-            Button6.BackColor = Color.Black
-            Button7.BackColor = Color.Transparent
-            Button8.BackColor = Color.Transparent
-            Button9.BackColor = Color.Transparent
-            Button10.BackColor = Color.Transparent
-            Button11.BackColor = Color.Black
-            Button12.BackColor = Color.Black
-            Button13.BackColor = Color.Black
-            Button14.BackColor = Color.Black
-            Button15.BackColor = Color.Black
-            Button16.BackColor = Color.Black
-            Button17.BackColor = Color.Transparent
-            Button18.BackColor = Color.Transparent
-            Button19.BackColor = Color.Transparent
-            Button20.BackColor = Color.Black
-            Button21.BackColor = Color.Black
-            Button22.BackColor = Color.Black
-            Button23.BackColor = Color.Black
-            Button24.BackColor = Color.Black
-            Button25.BackColor = Color.Black
-
-            '7'
-
-        ElseIf Monitor.Text = 7 Then
-
-            Button1.BackColor = Color.Black
-            Button2.BackColor = Color.Black
-            Button3.BackColor = Color.Black
-            Button4.BackColor = Color.Black
-            Button5.BackColor = Color.Black
-            Button6.BackColor = Color.Transparent
-            Button7.BackColor = Color.Transparent
-            Button8.BackColor = Color.Transparent
-            Button9.BackColor = Color.Transparent
-            Button10.BackColor = Color.Black
-            Button11.BackColor = Color.Transparent
-            Button12.BackColor = Color.Transparent
-            Button13.BackColor = Color.Transparent
-            Button14.BackColor = Color.Transparent
-            Button15.BackColor = Color.Black
-            Button16.BackColor = Color.Transparent
-            Button17.BackColor = Color.Transparent
-            Button18.BackColor = Color.Transparent
-            Button19.BackColor = Color.Transparent
-            Button20.BackColor = Color.Black
-            Button21.BackColor = Color.Transparent
-            Button22.BackColor = Color.Transparent
-            Button23.BackColor = Color.Transparent
-            Button24.BackColor = Color.Transparent
-            Button25.BackColor = Color.Black
-
-            '8'
-
-        ElseIf Monitor.Text = 8 Then
-
-            Button1.BackColor = Color.Black
-            Button2.BackColor = Color.Black
-            Button3.BackColor = Color.Black
-            Button4.BackColor = Color.Black
-            Button5.BackColor = Color.Black
-            Button6.BackColor = Color.Black
-            Button7.BackColor = Color.Transparent
-            Button8.BackColor = Color.Transparent
-            Button9.BackColor = Color.Transparent
-            Button10.BackColor = Color.Black
-            Button11.BackColor = Color.Black
-            Button12.BackColor = Color.Black
-            Button13.BackColor = Color.Black
-            Button14.BackColor = Color.Black
-            Button15.BackColor = Color.Black
-            Button16.BackColor = Color.Black
-            Button17.BackColor = Color.Transparent
-            Button18.BackColor = Color.Transparent
-            Button19.BackColor = Color.Transparent
-            Button20.BackColor = Color.Black
-            Button21.BackColor = Color.Black
-            Button22.BackColor = Color.Black
-            Button23.BackColor = Color.Black
-            Button24.BackColor = Color.Black
-            Button25.BackColor = Color.Black
-
-            '9'
-
-        ElseIf Monitor.Text = 9 Then
-
-            Button1.BackColor = Color.Black
-            Button2.BackColor = Color.Black
-            Button3.BackColor = Color.Black
-            Button4.BackColor = Color.Black
-            Button5.BackColor = Color.Black
-            Button6.BackColor = Color.Black
-            Button7.BackColor = Color.Transparent
-            Button8.BackColor = Color.Transparent
-            Button9.BackColor = Color.Transparent
-            Button10.BackColor = Color.Black
-            Button11.BackColor = Color.Black
-            Button12.BackColor = Color.Black
-            Button13.BackColor = Color.Black
-            Button14.BackColor = Color.Black
-            Button15.BackColor = Color.Black
-            Button16.BackColor = Color.Transparent
-            Button17.BackColor = Color.Transparent
-            Button18.BackColor = Color.Transparent
-            Button19.BackColor = Color.Transparent
-            Button20.BackColor = Color.Black
-            Button21.BackColor = Color.Transparent
-            Button22.BackColor = Color.Transparent
-            Button23.BackColor = Color.Transparent
-            Button24.BackColor = Color.Transparent
-            Button25.BackColor = Color.Black
-
-            '8'
-
-        ElseIf Monitor.Text = 10 Then
-
-            Button1.BackColor = Color.Black
-            Button2.BackColor = Color.Black
-            Button3.BackColor = Color.Black
-            Button4.BackColor = Color.Black
-            Button5.BackColor = Color.Black
-            Button6.BackColor = Color.Black
-            Button7.BackColor = Color.Transparent
-            Button8.BackColor = Color.Transparent
-            Button9.BackColor = Color.Transparent
-            Button10.BackColor = Color.Black
-            Button11.BackColor = Color.Black
-            Button12.BackColor = Color.Black
-            Button13.BackColor = Color.Black
-            Button14.BackColor = Color.Black
-            Button15.BackColor = Color.Black
-            Button16.BackColor = Color.Black
-            Button17.BackColor = Color.Transparent
-            Button18.BackColor = Color.Transparent
-            Button19.BackColor = Color.Transparent
-            Button20.BackColor = Color.Black
-            Button21.BackColor = Color.Black
-            Button22.BackColor = Color.Black
-            Button23.BackColor = Color.Black
-            Button24.BackColor = Color.Black
-            Button25.BackColor = Color.Black
-
-            '7'
-
-        ElseIf Monitor.Text = 11 Then
-
-            Button1.BackColor = Color.Black
-            Button2.BackColor = Color.Black
-            Button3.BackColor = Color.Black
-            Button4.BackColor = Color.Black
-            Button5.BackColor = Color.Black
-            Button6.BackColor = Color.Transparent
-            Button7.BackColor = Color.Transparent
-            Button8.BackColor = Color.Transparent
-            Button9.BackColor = Color.Transparent
-            Button10.BackColor = Color.Black
-            Button11.BackColor = Color.Transparent
-            Button12.BackColor = Color.Transparent
-            Button13.BackColor = Color.Transparent
-            Button14.BackColor = Color.Transparent
-            Button15.BackColor = Color.Black
-            Button16.BackColor = Color.Transparent
-            Button17.BackColor = Color.Transparent
-            Button18.BackColor = Color.Transparent
-            Button19.BackColor = Color.Transparent
-            Button20.BackColor = Color.Black
-            Button21.BackColor = Color.Transparent
-            Button22.BackColor = Color.Transparent
-            Button23.BackColor = Color.Transparent
-            Button24.BackColor = Color.Transparent
-            Button25.BackColor = Color.Black
-
-            '6'
-
-        ElseIf Monitor.Text = 12 Then
-
-            Button1.BackColor = Color.Black
-            Button2.BackColor = Color.Black
-            Button3.BackColor = Color.Black
-            Button4.BackColor = Color.Black
-            Button5.BackColor = Color.Black
-            Button6.BackColor = Color.Black
-            Button7.BackColor = Color.Transparent
-            Button8.BackColor = Color.Transparent
-            Button9.BackColor = Color.Transparent
-            Button10.BackColor = Color.Transparent
-            Button11.BackColor = Color.Black
-            Button12.BackColor = Color.Black
-            Button13.BackColor = Color.Black
-            Button14.BackColor = Color.Black
-            Button15.BackColor = Color.Black
-            Button16.BackColor = Color.Black
-            Button17.BackColor = Color.Transparent
-            Button18.BackColor = Color.Transparent
-            Button19.BackColor = Color.Transparent
-            Button20.BackColor = Color.Black
-            Button21.BackColor = Color.Black
-            Button22.BackColor = Color.Black
-            Button23.BackColor = Color.Black
-            Button24.BackColor = Color.Black
-            Button25.BackColor = Color.Black
-
-            '5'
-
-        ElseIf Monitor.Text = 13 Then
-
-            Button1.BackColor = Color.Black
-            Button2.BackColor = Color.Black
-            Button3.BackColor = Color.Black
-            Button4.BackColor = Color.Black
-            Button5.BackColor = Color.Black
-            Button6.BackColor = Color.Black
-            Button7.BackColor = Color.Transparent
-            Button8.BackColor = Color.Transparent
-            Button9.BackColor = Color.Transparent
-            Button10.BackColor = Color.Transparent
-            Button11.BackColor = Color.Black
-            Button12.BackColor = Color.Black
-            Button13.BackColor = Color.Black
-            Button14.BackColor = Color.Black
-            Button15.BackColor = Color.Black
-            Button16.BackColor = Color.Transparent
-            Button17.BackColor = Color.Transparent
-            Button18.BackColor = Color.Transparent
-            Button19.BackColor = Color.Transparent
-            Button20.BackColor = Color.Black
-            Button21.BackColor = Color.Black
-            Button22.BackColor = Color.Black
-            Button23.BackColor = Color.Black
-            Button24.BackColor = Color.Black
-            Button25.BackColor = Color.Black
-
-            '4'
-
-        ElseIf Monitor.Text = 14 Then
-
-            Button1.BackColor = Color.Black
-            Button2.BackColor = Color.Transparent
-            Button3.BackColor = Color.Transparent
-            Button4.BackColor = Color.Transparent
-            Button5.BackColor = Color.Black
-            Button6.BackColor = Color.Black
-            Button7.BackColor = Color.Transparent
-            Button8.BackColor = Color.Transparent
-            Button9.BackColor = Color.Transparent
-            Button10.BackColor = Color.Black
-            Button11.BackColor = Color.Black
-            Button12.BackColor = Color.Black
-            Button13.BackColor = Color.Black
-            Button14.BackColor = Color.Black
-            Button15.BackColor = Color.Black
-            Button16.BackColor = Color.Transparent
-            Button17.BackColor = Color.Transparent
-            Button18.BackColor = Color.Transparent
-            Button19.BackColor = Color.Transparent
-            Button20.BackColor = Color.Black
-            Button21.BackColor = Color.Transparent
-            Button22.BackColor = Color.Transparent
-            Button23.BackColor = Color.Transparent
-            Button24.BackColor = Color.Transparent
-            Button25.BackColor = Color.Black
-
-            '3'
-
-        ElseIf Monitor.Text = 15 Then
-
-            Button1.BackColor = Color.Black
-            Button2.BackColor = Color.Black
-            Button3.BackColor = Color.Black
-            Button4.BackColor = Color.Black
-            Button5.BackColor = Color.Black
-            Button6.BackColor = Color.Transparent
-            Button7.BackColor = Color.Transparent
-            Button8.BackColor = Color.Transparent
-            Button9.BackColor = Color.Transparent
-            Button10.BackColor = Color.Black
-            Button11.BackColor = Color.Black
-            Button12.BackColor = Color.Black
-            Button13.BackColor = Color.Black
-            Button14.BackColor = Color.Black
-            Button15.BackColor = Color.Black
-            Button16.BackColor = Color.Transparent
-            Button17.BackColor = Color.Transparent
-            Button18.BackColor = Color.Transparent
-            Button19.BackColor = Color.Transparent
-            Button20.BackColor = Color.Black
-            Button21.BackColor = Color.Black
-            Button22.BackColor = Color.Black
-            Button23.BackColor = Color.Black
-            Button24.BackColor = Color.Black
-            Button25.BackColor = Color.Black
-
-            '2'
-
-        ElseIf Monitor.Text = 16 Then
-
-            Button1.BackColor = Color.Black
-            Button2.BackColor = Color.Black
-            Button3.BackColor = Color.Black
-            Button4.BackColor = Color.Black
-            Button5.BackColor = Color.Black
-            Button6.BackColor = Color.Transparent
-            Button7.BackColor = Color.Transparent
-            Button8.BackColor = Color.Transparent
-            Button9.BackColor = Color.Transparent
-            Button10.BackColor = Color.Black
-            Button11.BackColor = Color.Black
-            Button12.BackColor = Color.Black
-            Button13.BackColor = Color.Black
-            Button14.BackColor = Color.Black
-            Button15.BackColor = Color.Black
-            Button16.BackColor = Color.Black
-            Button17.BackColor = Color.Transparent
-            Button18.BackColor = Color.Transparent
-            Button19.BackColor = Color.Transparent
-            Button20.BackColor = Color.Transparent
-            Button21.BackColor = Color.Black
-            Button22.BackColor = Color.Black
-            Button23.BackColor = Color.Black
-            Button24.BackColor = Color.Black
-            Button25.BackColor = Color.Black
-
-            '1'
-
-        ElseIf Monitor.Text = 17 Then
-
-            Button1.BackColor = Color.Transparent
-            Button2.BackColor = Color.Transparent
-            Button3.BackColor = Color.Black
-            Button4.BackColor = Color.Transparent
-            Button5.BackColor = Color.Transparent
-            Button6.BackColor = Color.Transparent
-            Button7.BackColor = Color.Transparent
-            Button8.BackColor = Color.Black
-            Button9.BackColor = Color.Transparent
-            Button10.BackColor = Color.Transparent
-            Button11.BackColor = Color.Transparent
-            Button12.BackColor = Color.Transparent
-            Button13.BackColor = Color.Black
-            Button14.BackColor = Color.Transparent
-            Button15.BackColor = Color.Transparent
-            Button16.BackColor = Color.Transparent
-            Button17.BackColor = Color.Transparent
-            Button18.BackColor = Color.Black
-            Button19.BackColor = Color.Transparent
-            Button20.BackColor = Color.Transparent
-            Button21.BackColor = Color.Transparent
-            Button22.BackColor = Color.Transparent
-            Button23.BackColor = Color.Black
-            Button24.BackColor = Color.Transparent
-            Button25.BackColor = Color.Transparent
-
-
-            '0'
+        If (Not B) Or D Or C Then
+            Button2.BackColor = Color.Red
+            Button3.BackColor = Color.Red
+            Button23.BackColor = Color.Red
         Else
-            Button1.BackColor = Color.Black
-            Button2.BackColor = Color.Black
-            Button3.BackColor = Color.Black
-            Button4.BackColor = Color.Black
-            Button5.BackColor = Color.Black
-            Button6.BackColor = Color.Black
-            Button7.BackColor = Color.Transparent
-            Button8.BackColor = Color.Transparent
-            Button9.BackColor = Color.Transparent
-            Button10.BackColor = Color.Black
-            Button11.BackColor = Color.Black
-            Button12.BackColor = Color.Transparent
-            Button13.BackColor = Color.Transparent
-            Button14.BackColor = Color.Transparent
-            Button15.BackColor = Color.Black
-            Button16.BackColor = Color.Black
-            Button17.BackColor = Color.Transparent
-            Button18.BackColor = Color.Transparent
-            Button19.BackColor = Color.Transparent
-            Button20.BackColor = Color.Black
-            Button21.BackColor = Color.Black
-            Button22.BackColor = Color.Black
-            Button23.BackColor = Color.Black
-            Button24.BackColor = Color.Black
-            Button25.BackColor = Color.Black
+            Button2.BackColor = Color.White
+            Button3.BackColor = Color.White
+            Button23.BackColor = Color.White
+        End If
 
+        If (Not D) Or C Or B Or A Then
+            Button4.BackColor = Color.Red
+        Else
+            Button4.BackColor = Color.White
+        End If
 
+        If C Or A Or ((Not B) And (Not D)) Or (B And D) Then
+            Button5.BackColor = Color.Red
+        Else
+            Button5.BackColor = Color.White
+        End If
 
+        If A Or ((Not C) And (Not D)) Or (B And (Not C)) Or (B And (Not D)) Then
+            Button6.BackColor = Color.Red
+        Else
+            Button6.BackColor = Color.White
+        End If
 
+        If (Not A) And (Not B) And (Not C) And D Then
+            Button8.BackColor = Color.Red
+        Else
+            Button8.BackColor = Color.White
+        End If
 
+        If (B And (Not C) And (Not D)) Or (B And C And D) Then
+            Button9.BackColor = Color.Red
+        Else
+            Button9.BackColor = Color.White
+        End If
+
+        If A Or ((Not B) And (Not D)) Or ((Not B) And C) Then
+            Button10.BackColor = Color.Red
+        Else
+            Button10.BackColor = Color.White
+        End If
+
+        If (Not D) Or A Or ((Not B) And C) Or (B And (Not C)) Then
+            Button11.BackColor = Color.Red
+            Button15.BackColor = Color.Red
+        Else
+            Button11.BackColor = Color.White
+            Button15.BackColor = Color.White
+        End If
+
+        If A Or ((Not B) And C) Or (C And (Not D)) Or (B And (Not C)) Then
+            Button12.BackColor = Color.Red
+            Button14.BackColor = Color.Red
+        Else
+            Button12.BackColor = Color.White
+            Button14.BackColor = Color.White
+        End If
+
+        If D Or C Or B Or A Then
+            Button13.BackColor = Color.Red
+        Else
+            Button13.BackColor = Color.White
+        End If
+
+        If ((Not B) And (Not D)) Or (C And (Not D)) Then
+            Button16.BackColor = Color.Red
+        Else
+            Button16.BackColor = Color.White
+        End If
+
+        If (B And C And D) Or ((Not A) And (Not B) And (Not C) And D) Then
+            Button18.BackColor = Color.Red
+        Else
+            Button18.BackColor = Color.White
+        End If
+
+        If (B And (Not C) And (Not D)) Then
+            Button19.BackColor = Color.Red
+        Else
+            Button19.BackColor = Color.White
+        End If
+
+        If A Or ((Not B) And (Not C) And (Not D)) Or ((Not B) And C And D) Or (B And (Not C) And D) Or (B And C And (Not D)) Then
+            Button20.BackColor = Color.Red
+        Else
+            Button20.BackColor = Color.White
+        End If
+
+        If (Not B) Or ((Not C) And D) Or (C And (Not D)) Then
+            Button21.BackColor = Color.Red
+            Button22.BackColor = Color.Red
+            Button25.BackColor = Color.Red
+        Else
+            Button21.BackColor = Color.White
+            Button22.BackColor = Color.White
+            Button25.BackColor = Color.White
+        End If
+
+        If (Not B) Or (Not C) Or (Not D) Then
+            Button24.BackColor = Color.Red
+        Else
+            Button24.BackColor = Color.White
+        End If
+
+        If second = 9 Then
+            second = -1
         End If
     End Sub
 End Class
+
